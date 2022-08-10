@@ -22,7 +22,7 @@ while True:
 
 
     headers = {
-            'X-CMC_PRO_API_KEY': '0914e058-72b9-46fd-b1e2-7c5b0659c564',
+            'X-CMC_PRO_API_KEY': '[API-KEY]',
             'Accepts': 'application/json'
             }
 
