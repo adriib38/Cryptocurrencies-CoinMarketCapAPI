@@ -2,7 +2,7 @@ import requests
 import time
 
 headers = {
-        'X-CMC_PRO_API_KEY': '0914e058-72b9-46fd-b1e2-7c5b0659c564',
+        'X-CMC_PRO_API_KEY': 'YOUR-API-KEY',
         'Accepts': 'application/json'
         }
 
@@ -27,13 +27,17 @@ for coin in coins:
         #print(coin['symbol'])
         #print(round(coin['quote']['EUR']['price'],5))
 
-        btc =	{
-
-        }
-        
+        btc["name"] = coin["name"]
         btc["live"] = round(coin['quote']['EUR']['price'])
         btc["last_updated"] = coin['quote']['EUR']['last_updated']
+        btc["percent_change_1h"] = coin['quote']['EUR']['percent_change_1h']
+        btc["percent_change_24h"] = coin['quote']['EUR']['percent_change_24h']
+        btc["percent_change_7d"] = coin['quote']['EUR']['percent_change_7d']
 
-        print(btc)
+        for clave in btc:
+          # Hacer algo con esa clave
+          print(clave)
+          valor = btc[clave]
+          print(valor)
 
 #DOCU: https://coinmarketcap.com/api/documentation/v1/#operation/getV1CryptocurrencyListingsLatest
